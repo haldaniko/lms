@@ -25,6 +25,14 @@
 						</div>
 					</nav>
 				</div>
+				<div class="mx-2 my-2.5">
+					<nav class="space-y-1">
+						<SidebarLink
+							:link="posterLink"
+							:isCollapsed="sidebarStore.isSidebarCollapsed"
+						/>
+					</nav>
+				</div>
 			</div>
 			<div
 				v-if="sidebarSettings.data?.web_pages?.length || isModerator"
@@ -273,6 +281,7 @@ import {
 	h,
 	onUnmounted,
 	computed,
+	defineComponent,
 } from 'vue'
 import {
 	BookOpen,
@@ -324,6 +333,47 @@ const iconProps = {
 	strokeWidth: 1.5,
 	width: 16,
 	height: 16,
+}
+const EuropeanUnionIcon = markRaw(
+	defineComponent({
+		name: 'EuropeanUnionIcon',
+		render() {
+			const stars = Array.from({ length: 12 }, (_, index) => {
+				const angle = (index * Math.PI) / 6 - Math.PI / 2
+				return h('circle', {
+					cx: 12 + Math.cos(angle) * 5.1,
+					cy: 12 + Math.sin(angle) * 5.1,
+					r: 0.8,
+					fill: '#ffcc00',
+				})
+			})
+
+			return h(
+				'svg',
+				{
+					viewBox: '0 0 24 24',
+					fill: 'none',
+					xmlns: 'http://www.w3.org/2000/svg',
+				},
+				[
+					h('rect', {
+						x: 3,
+						y: 4,
+						width: 18,
+						height: 16,
+						rx: 2,
+						fill: '#003399',
+					}),
+					...stars,
+				]
+			)
+		},
+	})
+)
+const posterLink = {
+	label: 'Проект BG16RFPR001-1.012-0111-C01',
+	icon: EuropeanUnionIcon,
+	to: 'https://obucheniya.com/bg#',
 }
 
 onMounted(() => {
