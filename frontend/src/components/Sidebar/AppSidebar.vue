@@ -27,10 +27,41 @@
 				</div>
 				<div class="mx-2 my-2.5">
 					<nav class="space-y-1">
-						<SidebarLink
-							:link="posterLink"
-							:isCollapsed="sidebarStore.isSidebarCollapsed"
-						/>
+						<button
+							class="flex w-full cursor-pointer items-center rounded text-ink-gray-8 duration-300 ease-in-out hover:bg-surface-gray-2 focus:outline-none focus:transition-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-outline-gray-3"
+							:class="sidebarStore.isSidebarCollapsed ? 'h-7' : 'min-h-10'"
+							@click="showPosterModal = true"
+						>
+							<div
+								class="flex items-center w-full duration-300 ease-in-out"
+								:class="
+									sidebarStore.isSidebarCollapsed ? 'p-1 relative' : 'px-2 py-1'
+								"
+							>
+								<Tooltip
+									:text="projectTitle"
+									placement="right"
+									:disabled="!sidebarStore.isSidebarCollapsed"
+								>
+									<span class="grid h-5 w-6 flex-shrink-0 place-items-center">
+										<Landmark class="h-4 w-4 stroke-1.5 text-ink-gray-8" />
+									</span>
+								</Tooltip>
+								<span
+									class="ms-2 min-w-0 text-start text-sm leading-5 duration-300 ease-in-out"
+									:class="
+										sidebarStore.isSidebarCollapsed
+											? 'w-0 overflow-hidden opacity-0'
+											: 'w-full opacity-100'
+									"
+								>
+									<span class="block">{{ projectLabel }}</span>
+									<span class="block whitespace-normal break-all font-medium">
+										{{ projectNumber }}
+									</span>
+								</span>
+							</div>
+						</button>
 					</nav>
 				</div>
 			</div>
@@ -259,6 +290,22 @@
 		v-model:reloadSidebar="sidebarSettings"
 		:page="pageToEdit"
 	/>
+	<Dialog v-model:open="showPosterModal" size="5xl">
+		<template #body-title>
+			<div class="text-lg font-semibold text-ink-gray-9">
+				{{ projectTitle }}
+			</div>
+		</template>
+		<template #body-content>
+			<div class="max-h-[80vh] overflow-auto rounded border bg-surface-white">
+				<img
+					:src="posterImageUrl"
+					:alt="projectTitle"
+					class="h-auto w-full"
+				/>
+			</div>
+		</template>
+	</Dialog>
 </template>
 
 <script setup>
@@ -267,7 +314,7 @@ import { usersStore } from '@/stores/user'
 import { sessionStore } from '@/stores/session'
 import { useSidebar } from '@/stores/sidebar'
 import { useSettings } from '@/stores/settings'
-import { Button, call, createResource, Tooltip, toast } from 'frappe-ui'
+import { Button, call, createResource, Dialog, Tooltip, toast } from 'frappe-ui'
 import PageModal from '@/components/Modals/PageModal.vue'
 import LMSLogo from '@/components/Icons/LMSLogo.vue'
 import { useRouter } from 'vue-router'
@@ -288,6 +335,7 @@ import {
 	CircleHelp,
 	FolderTree,
 	FileText,
+	Landmark,
 	UserPlus,
 	Users,
 	BookText,
@@ -316,6 +364,7 @@ const unreadCount = ref(0)
 const sidebarLinks = ref(null)
 const { capture } = useTelemetry()
 const showPageModal = ref(false)
+const showPosterModal = ref(false)
 const isModerator = ref(false)
 const isInstructor = ref(false)
 const pageToEdit = ref(null)
@@ -375,6 +424,11 @@ const posterLink = {
 	icon: EuropeanUnionIcon,
 	to: 'https://obucheniya.com/bg#',
 }
+
+const projectLabel = '\u041f\u0440\u043e\u0435\u043a\u0442'
+const projectNumber = 'BG16RFPR001-1.012-0111-C01'
+const projectTitle = `${projectLabel} ${projectNumber}`
+const posterImageUrl = '/assets/lms/images/plakat-iot-digi.jpg'
 
 onMounted(() => {
 	setUpOnboarding()
