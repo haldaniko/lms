@@ -4501,7 +4501,7 @@ msgstr "Длъжност"
 #: frontend/src/pages/Jobs.vue:6 frontend/src/pages/Jobs.vue:348
 #: lms/lms/doctype/lms_settings/lms_settings.json
 msgid "Jobs"
-msgstr "работни места"
+msgstr "Работни места"
 
 #: frontend/src/pages/Batches/components/LiveClass.vue:86
 #: frontend/src/pages/Home/AdminHome.vue:89
@@ -5575,7 +5575,7 @@ msgstr "Moodle"
 
 #: frontend/src/components/Sidebar/AppSidebar.vue:52
 msgid "More"
-msgstr "повече"
+msgstr "Повече"
 
 #. Label of the multiple (Check) field in DocType 'LMS Question'
 #: lms/lms/doctype/lms_question/lms_question.json
