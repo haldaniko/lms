@@ -89,7 +89,7 @@
 											: 'w-full opacity-100'
 									"
 								>
-									<span class="whitespace-normal break-words">
+									<span class="whitespace-pre-line break-words">
 										{{ licenseTitle }}
 									</span>
 								</span>
@@ -343,7 +343,7 @@
 	</Dialog>
 	<Dialog v-model:open="showLicenseModal" size="3xl">
 		<template #body-title>
-			<div class="text-lg font-semibold text-ink-gray-9">
+			<div class="whitespace-pre-line text-lg font-semibold text-ink-gray-9">
 				{{ licenseTitle }}
 			</div>
 		</template>
@@ -360,7 +360,7 @@
 						>
 							{{ row.label }}
 						</th>
-						<td class="px-4 py-3 align-top">
+						<td class="whitespace-pre-line px-4 py-3 align-top">
 							{{ row.value }}
 						</td>
 					</tr>
@@ -483,17 +483,17 @@ const EuropeanUnionIcon = markRaw(
 	})
 )
 const posterLink = {
-	label: 'Проект BG16RFPR001-1.012-0111-C01',
+	label: 'BG16RFPR001-1.012-0189-C01',
 	icon: EuropeanUnionIcon,
 	to: 'https://obucheniya.com/bg#',
 }
 
 const projectLabel = '\u041f\u0440\u043e\u0435\u043a\u0442'
-const projectNumber = 'BG16RFPR001-1.012-0111-C01'
+const projectNumber = 'BG16RFPR001-1.012-0189-C01'
 const projectTitle = `${projectLabel} ${projectNumber}`
-const posterImageUrl = '/assets/lms/images/plakat-iot-digi.jpg'
-const licenseTitle =
-	'\u041b\u0438\u0446\u0435\u043d\u0437 EDU Base 01.006 01-006-0212'
+const posterImageUrl = '/assets/lms/images/Plameli.jpg'
+const licenseNumber = 'EDU Base 01.006 01-006-0213'
+const licenseTitle = `\u041b\u0438\u0446\u0435\u043d\u0437 ${licenseNumber}`
 const licenseRows = [
 	{
 		label: '\u0420\u0410\u0417\u0420\u0410\u0411\u041e\u0422\u0427\u0418\u041a',
@@ -505,12 +505,11 @@ const licenseRows = [
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417',
-		value: '01-EDU Base 01.006 01-006-0212',
+		value: licenseNumber,
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417\u041e\u041f\u041e\u041b\u0423\u0427\u0410\u0422\u0415\u041b',
-		value:
-			'\u0418\u043d\u043e\u0432\u0430\u0442\u0438\u0432\u043d\u0438 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u043d\u0438 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438',
+		value: '\u041f\u043b\u0430\u043c\u0435\u043b\u0438 \u0444\u0438\u043d\u0430\u043d\u0441 \u0415\u041e\u041e\u0414',
 	},
 	{
 		label: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u043e \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442',
