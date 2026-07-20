@@ -35,6 +35,7 @@ bench new-site lms.localhost \
 
 bench --site lms.localhost install-app payments
 bench --site lms.localhost install-app lms
+bench --site lms.localhost execute frappe.db.set_value --args "['Language', 'bg', 'enabled', 1]"
 bench --site lms.localhost set-config developer_mode 0
 bench --site lms.localhost clear-cache
 bench use lms.localhost
