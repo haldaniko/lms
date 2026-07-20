@@ -492,7 +492,8 @@ const projectLabel = '\u041f\u0440\u043e\u0435\u043a\u0442'
 const projectNumber = 'BG16RFPR001-1.012-0189-C01'
 const projectTitle = `${projectLabel} ${projectNumber}`
 const posterImageUrl = '/assets/lms/images/Plameli.jpg'
-const licenseNumber = 'EDU Base 01.006 01-006-0213'
+const licenseNumber = 'EDU Base 01.006\n01-006-0213'
+const licenseId = '01-006-0213'
 const licenseTitle = `\u041b\u0438\u0446\u0435\u043d\u0437 ${licenseNumber}`
 const licenseRows = [
 	{
@@ -505,7 +506,7 @@ const licenseRows = [
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417',
-		value: licenseNumber,
+		value: licenseId,
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417\u041e\u041f\u041e\u041b\u0423\u0427\u0410\u0422\u0415\u041b',
