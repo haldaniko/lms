@@ -483,16 +483,17 @@ const EuropeanUnionIcon = markRaw(
 	})
 )
 const posterLink = {
-	label: 'BG16RFPR001-1.012-0189-C01',
+	label: 'BG16RFPR001-1.012-0120-C01',
 	icon: EuropeanUnionIcon,
 	to: 'https://obucheniya.com/bg#',
 }
 
 const projectLabel = '\u041f\u0440\u043e\u0435\u043a\u0442'
-const projectNumber = 'BG16RFPR001-1.012-0189-C01'
+const projectNumber = 'BG16RFPR001-1.012-0120-C01'
 const projectTitle = `${projectLabel} ${projectNumber}`
-const posterImageUrl = '/assets/lms/images/Plameli.jpg'
-const licenseNumber = 'EDU Base 01.006 01-006-0213'
+const posterImageUrl = '/assets/lms/images/Hashtag.jpg'
+const licenseNumber = 'EDU Base 01.006\n01-006-0211'
+const licenseId = '01-006-0211'
 const licenseTitle = `\u041b\u0438\u0446\u0435\u043d\u0437 ${licenseNumber}`
 const licenseRows = [
 	{
@@ -505,11 +506,11 @@ const licenseRows = [
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417',
-		value: licenseNumber,
+		value: licenseId,
 	},
 	{
 		label: '\u041b\u0418\u0426\u0415\u041d\u0417\u041e\u041f\u041e\u041b\u0423\u0427\u0410\u0422\u0415\u041b',
-		value: '\u041f\u043b\u0430\u043c\u0435\u043b\u0438 \u0444\u0438\u043d\u0430\u043d\u0441 \u0415\u041e\u041e\u0414',
+		value: '\u0425\u0430\u0448\u0442\u0430\u0433 \u0415\u041e\u041e\u0414',
 	},
 	{
 		label: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u043e \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442',
