@@ -37,6 +37,9 @@ bench get-app payments
 ln -s /workspace apps/lms
 grep -qxF lms sites/apps.txt || printf '\nlms\n' >> sites/apps.txt
 npm_config_ignore_scripts=true ./env/bin/python -m pip install -e apps/lms
+if [ ! -e /sites ]; then
+    sudo ln -s /home/frappe/frappe-bench/sites /sites
+fi
 bench build --app lms
 
 bench new-site "${SITE_NAME}" \
